@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,12 +8,17 @@ using MelonLoader;
 using UnityEngine;
 using VRC;
 using VRC.Core;
+using ParamLib;
 
 namespace VRCMoreParameters
 {
     public class MyMod : MelonMod
     {
         public VRCPlayer controller = VRCPlayer.field_Internal_Static_VRCPlayer_0;
+
+        private FloatBaseParam headXParam = new FloatBaseParam("HeadX");
+        private FloatBaseParam headYParam = new FloatBaseParam("HeadY");
+        private FloatBaseParam headZParam = new FloatBaseParam("HeadZ");
 
         public override void OnUpdate()
         {
@@ -28,8 +34,13 @@ namespace VRCMoreParameters
             //Vector3 test = test_transform.position;
             Vector3 test_eulerAngles = test_transform.eulerAngles;
 
-            MelonLogger.Msg("Head Rotation: X="+ test_eulerAngles.x +", Y="+ test_eulerAngles.y +", Z="+ test_eulerAngles.z);
+            MelonLogger.Msg("Head Rotation: X=" + test_eulerAngles.x + ", Y=" + test_eulerAngles.y + ", Z=" + test_eulerAngles.z);
 
+            headXParam.ParamValue = (float)(test_eulerAngles.x / 360);
+            headYParam.ParamValue = (float)(test_eulerAngles.y / 360);
+            headZParam.ParamValue = (float)(test_eulerAngles.z / 360);
+
+            MelonLogger.Msg("Head Rotation: headXParam=" + headXParam.ParamValue + ", headYParam=" + test_eulerAngles.y + ", headZParam=" + test_eulerAngles.z);
         }
 
         public static Transform TransformOfBone(VRCPlayer player, HumanBodyBones bone)
