@@ -20,6 +20,23 @@ namespace VRCMoreParameters
         private FloatBaseParam headYParam = new FloatBaseParam("HeadY");
         private FloatBaseParam headZParam = new FloatBaseParam("HeadZ");
 
+        public override void VRChat_OnUiManagerInit()
+        {
+            MelonCoroutines.Start(UpdateParamStores());
+            MelonLogger.Msg(ConsoleColor.Cyan, "Initialized Sucessfully!");
+        }
+
+        IEnumerator UpdateParamStores()
+        {
+            for (; ; )
+            {
+                yield return new WaitForSeconds(2);
+                headXParam.ResetParam();
+                headYParam.ResetParam();
+                headZParam.ResetParam();
+            }
+        }
+
         public override void OnUpdate()
         {
             //if (Input.GetKeyDown(KeyCode.T))
