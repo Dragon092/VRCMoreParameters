@@ -77,6 +77,7 @@ namespace VRCMoreParameters
             return boneTransform;
         }
 
+        /*
         public static Vector3 CenterOfPlayer(VRCPlayer player)
         {
 
@@ -86,5 +87,6 @@ namespace VRCMoreParameters
 
             return new Vector3(center.x, headPos.y - (Vector3.Distance(headPos, lFootPos) / 2f), center.z);
         }
+        */
     }
 }
