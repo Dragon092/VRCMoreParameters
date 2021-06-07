@@ -16,13 +16,14 @@ namespace VRCMoreParameters
     {
         public VRCPlayer controller = VRCPlayer.field_Internal_Static_VRCPlayer_0;
 
-        private FloatBaseParam headXParam = new FloatBaseParam("HeadX", true);
-        private FloatBaseParam headYParam = new FloatBaseParam("HeadY", true);
-        private FloatBaseParam headZParam = new FloatBaseParam("HeadZ", true);
+        private FloatBaseParam headXParam = new FloatBaseParam("HeadX");
+        private FloatBaseParam headYParam = new FloatBaseParam("HeadY");
+        private FloatBaseParam headZParam = new FloatBaseParam("HeadZ");
 
         public override void VRChat_OnUiManagerInit()
         {
             MelonCoroutines.Start(UpdateParamStores());
+
             MelonLogger.Msg(ConsoleColor.Cyan, "Initialized Sucessfully!");
         }
 
@@ -34,6 +35,8 @@ namespace VRCMoreParameters
                 headXParam.ResetParam();
                 headYParam.ResetParam();
                 headZParam.ResetParam();
+
+                //MelonLogger.Msg("headYParam.ParamIndex: " + headYParam.ParamIndex + ", headYParam.ParamValue:" + headYParam.ParamValue);
             }
         }
 
@@ -57,7 +60,7 @@ namespace VRCMoreParameters
             headYParam.ParamValue = (float)(test_eulerAngles.y / 360);
             headZParam.ParamValue = (float)(test_eulerAngles.z / 360);
 
-            //MelonLogger.Msg("Head Rotation: headXParam=" + headXParam.ParamValue + ", headYParam=" + test_eulerAngles.y + ", headZParam=" + test_eulerAngles.z);
+            //MelonLogger.Msg("Head Rotation: headXParam=" + headXParam.ParamValue + ", headYParam=" + headYParam.ParamValue + ", headZParam=" + headZParam.ParamValue);
         }
 
         public static Transform TransformOfBone(VRCPlayer player, HumanBodyBones bone)
