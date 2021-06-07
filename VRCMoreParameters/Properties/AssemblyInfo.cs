@@ -37,5 +37,5 @@ using VRCMoreParameters;
 [assembly: AssemblyVersion("0.0.0.1")]
 [assembly: AssemblyFileVersion("0.0.0.1")]
 
-[assembly: MelonInfo(typeof(MyMod), "VRCMoreParameters", "0.0.0.1", "Dragon")]
+[assembly: MelonInfo(typeof(MyMod), "VRCMoreParameters", "0.0.0.1", "Dragon", "https://github.com/Dragon092/VRCMoreParameters")]
 [assembly: MelonGame("VRChat", "VRChat")]
