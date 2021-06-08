@@ -56,11 +56,16 @@ namespace VRCMoreParameters
 
             //MelonLogger.Msg("Head Rotation: X=" + test_eulerAngles.x + ", Y=" + test_eulerAngles.y + ", Z=" + test_eulerAngles.z);
 
-            headXParam.ParamValue = (float)(test_eulerAngles.x / 360);
-            headYParam.ParamValue = (float)(test_eulerAngles.y / 360);
-            headZParam.ParamValue = (float)(test_eulerAngles.z / 360);
+            headXParam.ParamValue = (float)(NormalizeFloat(180, 540, 0, 1, (test_eulerAngles.x + 180))); // TODO: Test
+            headYParam.ParamValue = (float)(NormalizeFloat(180, 540, 0, 1, (test_eulerAngles.y + 180))); // TODO: Test
+            headZParam.ParamValue = (float)(NormalizeFloat(180, 540, 0, 1, (test_eulerAngles.z + 180))); // Should be working
 
             //MelonLogger.Msg("Head Rotation: headXParam=" + headXParam.ParamValue + ", headYParam=" + headYParam.ParamValue + ", headZParam=" + headZParam.ParamValue);
+        }
+
+        private static float NormalizeFloat(float minInput, float maxInput, float minOutput, float maxOutput, float value)
+        {
+            return (maxOutput - minOutput) / (maxInput - minInput) * (value - maxInput) + maxOutput;
         }
 
         public static Transform TransformOfBone(VRCPlayer player, HumanBodyBones bone)
