@@ -50,15 +50,15 @@ namespace VRCMoreParameters
             //Vector3 test = VRCPlayer.field_Internal_Static_VRCPlayer_0.prop_VRCAvatarManager_0.field_Internal_IkController_0.HeadEffector.transform.position;
             //VRCPlayer.field_Internal_Static_VRCPlayer_0.prop_VRCAvatarManager_0.field_Internal_IkController_0.Head
 
-            Transform test_transform = TransformOfBone(VRCPlayer.field_Internal_Static_VRCPlayer_0, HumanBodyBones.Head);
-            //Vector3 test = test_transform.position;
-            Vector3 test_eulerAngles = test_transform.eulerAngles;
+            Transform head_bone_transform = TransformOfBone(VRCPlayer.field_Internal_Static_VRCPlayer_0, HumanBodyBones.Head);
+            //Vector3 test = head_bone_transform.position;
+            Vector3 head_bone_eulerAngles = head_bone_transform.eulerAngles;
 
-            //MelonLogger.Msg("Head Rotation: X=" + test_eulerAngles.x + ", Y=" + test_eulerAngles.y + ", Z=" + test_eulerAngles.z);
+            //MelonLogger.Msg("Head Rotation: X=" + head_bone_eulerAngles.x + ", Y=" + head_bone_eulerAngles.y + ", Z=" + head_bone_eulerAngles.z);
 
-            headXParam.ParamValue = (float)(NormalizeFloat(180, 540, 0, 1, (test_eulerAngles.x + 180))); // TODO: Test
-            headYParam.ParamValue = (float)(NormalizeFloat(180, 540, 0, 1, (test_eulerAngles.y + 180))); // TODO: Test
-            headZParam.ParamValue = (float)(NormalizeFloat(180, 540, 0, 1, (test_eulerAngles.z + 180))); // Should be working
+            headXParam.ParamValue = (float)(NormalizeFloat(180, 540, 0, 1, (head_bone_eulerAngles.x + 180))); // TODO: Test
+            headYParam.ParamValue = (float)(NormalizeFloat(180, 540, 0, 1, (head_bone_eulerAngles.y + 180))); // TODO: Test
+            headZParam.ParamValue = (float)(NormalizeFloat(180, 540, 0, 1, (head_bone_eulerAngles.z + 180))); // Should be working
 
             //MelonLogger.Msg("Head Rotation: headXParam=" + headXParam.ParamValue + ", headYParam=" + headYParam.ParamValue + ", headZParam=" + headZParam.ParamValue);
         }
