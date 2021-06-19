@@ -51,8 +51,8 @@ namespace VRCMoreParameters
 
             //MelonLogger.Msg("Head Rotation: X=" + head_bone_eulerAngles.x + ", Y=" + head_bone_eulerAngles.y + ", Z=" + head_bone_eulerAngles.z);
 
-            headXParam.ParamValue = (float)(NormalizeFloat(0, 360, 0, 1, ((head_bone_eulerAngles.x + 180) % 360))); // TODO: Test
-            headYParam.ParamValue = (float)(NormalizeFloat(0, 360, 0, 1, ((head_bone_eulerAngles.y + 180) % 360))); // TODO: Test
+            headXParam.ParamValue = (float)(NormalizeFloat(0, 360, 0, 1, ((head_bone_eulerAngles.x + 0) % 360))); // TODO: Test
+            headYParam.ParamValue = (float)(NormalizeFloat(0, 360, 0, 1, ((head_bone_eulerAngles.y + 0) % 360))); // TODO: Test
             headZParam.ParamValue = (float)(NormalizeFloat(0, 360, 0, 1, ((head_bone_eulerAngles.z + 180) % 360))); // Should be working
 
             //MelonLogger.Msg("Head Rotation: headXParam=" + headXParam.ParamValue + ", headYParam=" + headYParam.ParamValue + ", headZParam=" + headZParam.ParamValue);
