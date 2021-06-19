@@ -42,11 +42,6 @@ namespace VRCMoreParameters
 
         public override void OnUpdate()
         {
-            //if (Input.GetKeyDown(KeyCode.T))
-            //{
-            //    MelonLogger.Msg("You just pressed T");
-            //}
-
             //Vector3 test = VRCPlayer.field_Internal_Static_VRCPlayer_0.prop_VRCAvatarManager_0.field_Internal_IkController_0.HeadEffector.transform.position;
             //VRCPlayer.field_Internal_Static_VRCPlayer_0.prop_VRCAvatarManager_0.field_Internal_IkController_0.Head
 
