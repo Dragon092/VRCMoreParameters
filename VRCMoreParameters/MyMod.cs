@@ -20,7 +20,20 @@ namespace VRCMoreParameters
         private readonly FloatBaseParam headYParam = new FloatBaseParam("HeadY");
         private readonly FloatBaseParam headZParam = new FloatBaseParam("HeadZ");
 
-        public override void VRChat_OnUiManagerInit()
+        public override void OnApplicationStart()
+        {
+            MelonCoroutines.Start(OnUiManagerInit());
+        }
+
+        private IEnumerator OnUiManagerInit()
+        {
+            while (VRCUiManager.prop_VRCUiManager_0 == null)
+                yield return null;
+
+            VRChat_OnUiManagerInit();
+        }
+
+        private void VRChat_OnUiManagerInit()
         {
             MelonCoroutines.Start(UpdateParamStores());
 
