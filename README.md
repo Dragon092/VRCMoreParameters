@@ -5,8 +5,8 @@ A Melonloader mod for VRChat that adds additional parameters to your avatars tha
 Currently the following parameters are availible:
 | Parameter | Type | Description |
 | - | - | - |
-| HeadX | Float |
-| HeadY | Float |
+| HeadX | Float | Untested |
+| HeadY | Float | Untested |
 | HeadZ | Float | Head rotations around the Z axis<br />Upright head is 0.5 |
 
 Feel free to suggest ideas for additional paramters, but I can not promise to add anything.
