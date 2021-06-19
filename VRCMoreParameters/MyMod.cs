@@ -16,9 +16,9 @@ namespace VRCMoreParameters
     {
         public VRCPlayer controller = VRCPlayer.field_Internal_Static_VRCPlayer_0;
 
-        private FloatBaseParam headXParam = new FloatBaseParam("HeadX");
-        private FloatBaseParam headYParam = new FloatBaseParam("HeadY");
-        private FloatBaseParam headZParam = new FloatBaseParam("HeadZ");
+        private readonly FloatBaseParam headXParam = new FloatBaseParam("HeadX");
+        private readonly FloatBaseParam headYParam = new FloatBaseParam("HeadY");
+        private readonly FloatBaseParam headZParam = new FloatBaseParam("HeadZ");
 
         public override void VRChat_OnUiManagerInit()
         {
