@@ -1,0 +1,3 @@
+[submodule "VRCMoreParameters/ParamLib"]
+    path = VRCMoreParameters/ParamLib
+    url = git://github.com/benaclejames/ParamLib.git
