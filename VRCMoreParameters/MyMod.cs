@@ -58,11 +58,20 @@ namespace VRCMoreParameters
             //Vector3 test = VRCPlayer.field_Internal_Static_VRCPlayer_0.prop_VRCAvatarManager_0.field_Internal_IkController_0.HeadEffector.transform.position;
             //VRCPlayer.field_Internal_Static_VRCPlayer_0.prop_VRCAvatarManager_0.field_Internal_IkController_0.Head
 
+            if (!VRCPlayer.field_Internal_Static_VRCPlayer_0)
+            {
+                //MelonLogger.Msg("field_Internal_Static_VRCPlayer_0 is NULL");
+                return;
+            }
+
             Transform head_bone_transform = TransformOfBone(VRCPlayer.field_Internal_Static_VRCPlayer_0, HumanBodyBones.Head);
             //Vector3 test = head_bone_transform.position;
             Vector3 head_bone_eulerAngles = head_bone_transform.eulerAngles;
 
             //MelonLogger.Msg("Head Rotation: X=" + head_bone_eulerAngles.x + ", Y=" + head_bone_eulerAngles.y + ", Z=" + head_bone_eulerAngles.z);
+
+            //System.Random rand = new System.Random();
+            //float randomFloat = (float)rand.NextDouble();
 
             headXParam.ParamValue = (float)(NormalizeFloat(0, 360, 0, 1, ((head_bone_eulerAngles.x + 0) % 360))); // TODO: Test
             headYParam.ParamValue = (float)(NormalizeFloat(0, 360, 0, 1, ((head_bone_eulerAngles.y + 0) % 360))); // TODO: Test
