@@ -12,7 +12,7 @@ using ParamLib;
 
 namespace VRCMoreParameters
 {
-    public class MyMod : MelonMod
+    public class VRCMoreParameters : MelonMod
     {
         public VRCPlayer controller = VRCPlayer.field_Internal_Static_VRCPlayer_0;
 
