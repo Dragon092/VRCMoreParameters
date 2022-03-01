@@ -38,4 +38,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: VRCMoreParameters
-        path: bin\Release
+        path: VRCMoreParameters\bin\Release\VRCMoreParameters.dll
