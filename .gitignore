@@ -1,4 +1,3 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/csharp,unity,visualstudio,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=csharp,unity,visualstudio,windows
 
@@ -608,3 +607,5 @@ $RECYCLE.BIN/
 *.tlog
 
 # End of https://www.toptal.com/developers/gitignore/api/csharp,unity,visualstudio,windows
+
+VRCMelonLoaderLibs
